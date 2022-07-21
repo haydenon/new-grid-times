@@ -27,11 +27,11 @@ const MainStoryGrid = () => {
 
       <OpinionSection>
         <SectionTitle>Opinion</SectionTitle>
-        <StoryList>
+        <OpinionStoryList>
           {OPINION_STORIES.map((story, index) => (
             <OpinionStory key={story.id} {...story} />
           ))}
-        </StoryList>
+        </OpinionStoryList>
       </OpinionSection>
 
       <AdvertisementSection>
@@ -94,12 +94,27 @@ const StoryList = styled.div`
   display: flex;
   flex-direction: column;
 
-  & > *:not(:first-child) {
+  & > :not(:first-child) {
     border-top: 1px solid var(--color-gray-300);
     padding-top: 16px;
   }
-  & > *:not(:last-child) {
+  & > :not(:last-child) {
     padding-bottom: 16px;
+  }
+`;
+
+const OpinionStoryList = styled(StoryList)`
+  @media (${QUERIES.tabletOnly}) {
+    flex-direction: row;
+    gap: 32px;
+
+    & > :not(:first-child) {
+      border-top: none;
+      padding-top: 0;
+    }
+    & > :not(:last-child) {
+      padding-bottom: 0;
+    }
   }
 `;
 
