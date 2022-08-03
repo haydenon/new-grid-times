@@ -39,7 +39,7 @@ const SuperHeader = styled.div`
   background: var(--color-gray-900);
   color: white;
 
-  @media (${QUERIES.laptopAndUp}) {
+  @media ${QUERIES.laptopAndUp} {
     display: none;
   }
 `;
@@ -112,7 +112,7 @@ const SideWrapper = styled.div`
 const SideContent = styled.div`
   display: none;
 
-  @media (${QUERIES.laptopAndUp}) {
+  @media ${QUERIES.laptopAndUp} {
     display: block;
   }
 `;

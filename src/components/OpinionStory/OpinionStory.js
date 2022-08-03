@@ -27,7 +27,7 @@ const Wrapper = styled.article`
   justify-content: space-between;
   gap: 16px;
 
-  @media (${QUERIES.tabletOnly}) {
+  @media ${QUERIES.tabletOnly} {
     flex-direction: column;
     gap: 8px;
   }

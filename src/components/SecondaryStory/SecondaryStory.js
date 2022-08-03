@@ -23,7 +23,7 @@ const Wrapper = styled.article`
   grid-template-columns: 120px 1fr;
   color: var(--color-gray-900);
 
-  @media (${QUERIES.tabletOnly}) {
+  @media ${QUERIES.tabletOnly} {
     grid-template-columns: 1fr;
     grid-template-areas:
       "image"

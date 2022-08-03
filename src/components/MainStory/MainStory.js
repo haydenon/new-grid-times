@@ -37,7 +37,7 @@ const Heading = styled.h2`
 const Abstract = styled.p`
   --line-count: 8;
 
-  @media (${QUERIES.tabletOnly}) {
+  @media ${QUERIES.tabletOnly} {
     --line-count: 16;
   }
 

@@ -51,7 +51,7 @@ const Wrapper = styled.div`
   gap: 48px;
   margin-bottom: 48px;
 
-  @media (${QUERIES.tabletAndUp}) {
+  @media ${QUERIES.tabletAndUp} {
     gap: 0;
     grid-template-columns: 11fr 5fr;
     grid-template-areas:
@@ -60,7 +60,7 @@ const Wrapper = styled.div`
       "opinion-stories opinion-stories";
   }
 
-  @media (${QUERIES.laptopAndUp}) {
+  @media ${QUERIES.laptopAndUp} {
     grid-template-columns: 5fr 4fr 3fr;
     grid-template-areas:
       "main-story secondary-stories opinion-stories"
@@ -71,7 +71,7 @@ const Wrapper = styled.div`
 const MainStorySection = styled.section`
   grid-area: main-story;
 
-  @media (${QUERIES.tabletAndUp}) {
+  @media ${QUERIES.tabletAndUp} {
     padding-right: 16px;
     border-right: 1px solid var(--color-gray-300);
   }
@@ -80,11 +80,11 @@ const MainStorySection = styled.section`
 const SecondaryStorySection = styled.section`
   grid-area: secondary-stories;
 
-  @media (${QUERIES.tabletAndUp}) {
+  @media ${QUERIES.tabletAndUp} {
     padding-left: 16px;
   }
 
-  @media (${QUERIES.laptopAndUp}) {
+  @media ${QUERIES.laptopAndUp} {
     padding-right: 16px;
     border-right: 1px solid var(--color-gray-300);
   }
@@ -104,7 +104,7 @@ const StoryList = styled.div`
 `;
 
 const OpinionStoryList = styled(StoryList)`
-  @media (${QUERIES.tabletOnly}) {
+  @media ${QUERIES.tabletOnly} {
     flex-direction: row;
     gap: 32px;
 
@@ -121,11 +121,11 @@ const OpinionStoryList = styled(StoryList)`
 const OpinionSection = styled.section`
   grid-area: opinion-stories;
 
-  @media (${QUERIES.tabletAndUp}) {
+  @media ${QUERIES.tabletAndUp} {
     padding-top: 32px;
   }
 
-  @media (${QUERIES.laptopAndUp}) {
+  @media ${QUERIES.laptopAndUp} {
     padding-top: 0;
     padding-left: 16px;
   }
@@ -134,11 +134,11 @@ const OpinionSection = styled.section`
 const AdvertisementSection = styled.section`
   grid-area: advertisement;
 
-  @media (${QUERIES.tabletAndUp}) {
+  @media ${QUERIES.tabletAndUp} {
     padding-top: 48px;
   }
 
-  @media (${QUERIES.laptopAndUp}) {
+  @media ${QUERIES.laptopAndUp} {
     border-top: 1px solid var(--color-gray-300);
     margin-top: 16px;
     padding-top: 16px;

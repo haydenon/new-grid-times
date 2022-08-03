@@ -26,7 +26,7 @@ const Title = styled.h2`
   font-size: 1.5rem;
   margin-bottom: 1rem;
 
-  @media (${QUERIES.laptopAndUp}) {
+  @media ${QUERIES.laptopAndUp} {
     margin-bottom: 0.4rem;
   }
 `;
