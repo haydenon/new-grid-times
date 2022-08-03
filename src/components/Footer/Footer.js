@@ -1,9 +1,10 @@
-import React from 'react';
-import { Twitter, Facebook } from 'react-feather';
-import styled from 'styled-components/macro';
-import MaxWidthWrapper from '../MaxWidthWrapper';
+import React from "react";
+import { Twitter, Facebook } from "react-feather";
+import styled from "styled-components/macro";
+import { QUERIES } from "../../constants";
+import MaxWidthWrapper from "../MaxWidthWrapper";
 
-import VisuallyHidden from '../VisuallyHidden';
+import VisuallyHidden from "../VisuallyHidden";
 
 const Footer = () => {
   return (
@@ -25,21 +26,17 @@ const Footer = () => {
           </nav>
           <Social>
             <a href="/">
-              <VisuallyHidden>
-                Visit The Grid Times on Facebook
-              </VisuallyHidden>
+              <VisuallyHidden>Visit The Grid Times on Facebook</VisuallyHidden>
               <Facebook size={20} />
             </a>
             <a href="/">
-              <VisuallyHidden>
-                Visit The Grid Times on Twitter
-              </VisuallyHidden>
+              <VisuallyHidden>Visit The Grid Times on Twitter</VisuallyHidden>
               <Twitter size={20} />
             </a>
           </Social>
         </TopRow>
         <MainNavArea>
-          <nav>
+          <MainNav>
             <MainNavHeading>Discover Content</MainNavHeading>
             <MainNavList>
               <li>
@@ -58,8 +55,8 @@ const Footer = () => {
                 <a href="/oped">Opinion and Editorial</a>
               </li>
             </MainNavList>
-          </nav>
-          <nav>
+          </MainNav>
+          <MainNav>
             <MainNavHeading>Regional Websites</MainNavHeading>
             <MainNavList>
               <li>
@@ -78,8 +75,8 @@ const Footer = () => {
                 <a href="/au">New Grid Australia</a>
               </li>
             </MainNavList>
-          </nav>
-          <nav>
+          </MainNav>
+          <MainNav>
             <MainNavHeading>Careers</MainNavHeading>
             <MainNavList>
               <li>
@@ -92,8 +89,8 @@ const Footer = () => {
                 <a href="/culture">Company Culture</a>
               </li>
             </MainNavList>
-          </nav>
-          <nav>
+          </MainNav>
+          <MainNav>
             <MainNavHeading>Legal and Privacy</MainNavHeading>
             <MainNavList>
               <li>
@@ -112,7 +109,7 @@ const Footer = () => {
                 <a href="/tos">Terms and Conditions</a>
               </li>
             </MainNavList>
-          </nav>
+          </MainNav>
         </MainNavArea>
       </MaxWidthWrapper>
       <SubfooterWrapper>
@@ -144,6 +141,16 @@ const TopRow = styled.div`
   font-size: 0.875rem;
   border-bottom: 1px solid var(--color-gray-700);
   padding: 24px 0;
+
+  @media ${QUERIES.tabletAndUp} {
+    gap: 48px;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  @media ${QUERIES.laptopAndUp} {
+    justify-content: flex-end;
+  }
 `;
 
 const Social = styled.div`
@@ -170,6 +177,19 @@ const MainNavArea = styled.div`
   gap: 32px;
   padding: 32px 0 48px;
   text-align: center;
+
+  @media ${QUERIES.tabletAndUp} {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+`;
+
+const MainNav = styled.nav`
+  @media ${QUERIES.tabletAndUp} {
+    flex: 1 200px;
+  }
 `;
 
 const MainNavHeading = styled.h2`
@@ -177,12 +197,20 @@ const MainNavHeading = styled.h2`
   font-weight: var(--font-weight-bold);
   color: var(--color-gray-300);
   margin-bottom: 8px;
+
+  @media ${QUERIES.tabletAndUp} {
+    text-align: start;
+  }
 `;
 
 const MainNavList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 4px;
+
+  @media ${QUERIES.tabletAndUp} {
+    align-items: flex-start;
+  }
 `;
 
 const SubfooterWrapper = styled.div`
@@ -196,6 +224,10 @@ const Subfooter = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media ${QUERIES.laptopAndUp} {
+    align-items: flex-start;
+  }
 `;
 
 const Logo = styled.a`
